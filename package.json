@@ -1,7 +1,7 @@
 {
-  "name": "calculator",
+  "name": "github_searcher",
   "version": "1.0.0",
-  "description": "calculator with basic functions",
+  "description": "Github searcher project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "react",
     "html",
     "css",
-    "calculator"
+    "Github"
   ],
   "author": "Sharon Arana",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "html-webpack-plugin": "^5.5.0",
     "i18next": "^21.8.2",
     "i18next-browser-languagedetector": "^6.1.4",
-    "i18next-parser": "^6.4.0",
+    "i18next-parser": "^0.13.0",
     "i18next-xhr-backend": "^3.2.2",
     "mini-css-extract-plugin": "^2.6.0",
     "react": "^18.1.0",
