@@ -6,12 +6,17 @@ import Searcher from "../containers/Searcher";
 import "../styles/pages/Home.styl";
 
 const Home = () => {
-  const isUserSelected = false;
+  const [UserSelected, setUserSelected] = React.useState<string | undefined>(
+    undefined
+  );
   return (
     <>
       <div className="home">
-        {isUserSelected && <UserDetails />}
-        <Searcher />
+        {UserSelected && <UserDetails />}
+        <Searcher
+          setUserSelected={setUserSelected}
+          userSelected={UserSelected}
+        />
       </div>
     </>
   );

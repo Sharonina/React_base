@@ -1,14 +1,23 @@
 import React from "react";
 import SearchInput from "../components/SearchInput";
-import UserResults from "../components/UsersResults";
+import UsersResults, { UsersData } from "../components/UsersResults";
 
 //Styles
 import "../styles/containers/Searcher.styl";
 
-const Searcher = () => {
+interface SearcherProps {
+  setUserSelected: React.Dispatch<React.SetStateAction<string | undefined>>;
+  userSelected: string | undefined;
+}
+
+const Searcher = (props: SearcherProps) => {
+  const { userSelected, setUserSelected } = props;
   const [user, setUser] = React.useState(/* <string | undefined> */ "");
-  const [users, setUsers] = React.useState([]);
-  const API = " https://api.github.com/search/users?q=";
+  const [users, setUsers] = React.useState({
+    items: [],
+    total_count: "0",
+  });
+  const API = " https://api.github.com/search/users?per_page=5&q=";
   console.log(user);
 
   const handleChange = (text: string) => {
@@ -17,6 +26,7 @@ const Searcher = () => {
 
   const handleClick = () => {
     getUsers(`${API}${user}`);
+    setUserSelected(undefined);
   };
 
   const getUsers = async (api: string) => {
@@ -32,7 +42,9 @@ const Searcher = () => {
         handleChange={handleChange}
         user={user}
       />
-      <UserResults users={users} />
+      {!userSelected && (
+        <UsersResults setUserSelected={setUserSelected} users={users} />
+      )}
     </div>
   );
 };
