@@ -25,11 +25,11 @@ const UsersResults = (props: UserResultsProps) => {
       <div key={user.id} className="UsersResults">
         <img src={user.avatar_url} alt={user.login} />
         <span>{user.login}</span>
-        <button onClick={() => setUserSelected(user.id)}>More</button>
+        <button onClick={() => setUserSelected(user.id)}>Details</button>
       </div>
     );
   });
-  return <div>{usersList}</div>;
+  return <div className="UsersResultsContainer">{usersList}</div>;
 };
 
 export default UsersResults;
