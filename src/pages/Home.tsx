@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        {UserSelected && <UserDetails />}
+        {UserSelected && <UserDetails userSelected={UserSelected} />}
         <Searcher
           setUserSelected={setUserSelected}
           userSelected={UserSelected}

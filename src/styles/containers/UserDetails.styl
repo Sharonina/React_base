@@ -4,7 +4,32 @@
   background-color: #A8A4CE
   height: 200px
   width: 100%
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  & img
+    width: 160px
+    border-radius: 50%
   //display: none //hace que no se vea
+
+.userDetailsText
+  justify-content: center
+  height: 100%
+  width: 60%
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  & h1
+    color: #f9f9f9
+  & h2
+    color: #495c83;
+    font-weight: 500;
+    font-size: initial;
+    margin-bottom: 20px
+  & h4
+    color: #223152;
+    font-weight: 600;
 
 .active
   display: flex 

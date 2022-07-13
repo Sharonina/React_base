@@ -15,6 +15,10 @@ export interface User {
   avatar_url: string;
   login: string;
   id: string;
+  email: string;
+  location: string;
+  bio: string;
+  name: string;
 }
 
 const UsersResults = (props: UserResultsProps) => {
@@ -25,7 +29,7 @@ const UsersResults = (props: UserResultsProps) => {
       <div key={user.id} className="UsersResults">
         <img src={user.avatar_url} alt={user.login} />
         <span>{user.login}</span>
-        <button onClick={() => setUserSelected(user.id)}>Details</button>
+        <button onClick={() => setUserSelected(user.login)}>Details</button>
       </div>
     );
   });
