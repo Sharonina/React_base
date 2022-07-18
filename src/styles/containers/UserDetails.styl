@@ -8,15 +8,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  //display: none //hace que no se vea
+
+.userDetailsImg
+  width: 30%
+  display: flex;
+  justify-content: center
   & img
     width: 160px
     border-radius: 50%
-  //display: none //hace que no se vea
 
 .userDetailsText
   justify-content: center
   height: 100%
-  width: 60%
+  width: 50%
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -27,6 +32,24 @@
     font-weight: 500;
     font-size: initial;
     margin-bottom: 20px
+  & h4
+    color: #223152;
+    font-weight: 600;
+
+.organizations
+  width: 20%
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 4% 
+  & .organizationsDiv
+    display: flex
+    align-items: center
+  & .organizationsImg 
+    margin-right: 6%;
+    & img
+      width: 30px
+      border-radius: 50%
   & h4
     color: #223152;
     font-weight: 600;

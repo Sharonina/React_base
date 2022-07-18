@@ -40,7 +40,9 @@ const UserDetails = (props: UserDetailsProps) => {
 
   return (
     <div className="userDetails">
-      <img src={user?.avatar_url} />
+      <div className="userDetailsImg">
+        <img src={user?.avatar_url} />
+      </div>
       <div className="userDetailsText">
         <h1>{user?.name}</h1>
         <h2>{user?.login}</h2>
@@ -48,14 +50,16 @@ const UserDetails = (props: UserDetailsProps) => {
         <h4>{user?.email}</h4>
         <h4>{user?.bio}</h4>
       </div>
-      {organizations?.map((organization) => (
-        <div key={organization?.id}>
-          <div className="organizations">
-            <img src={organization?.avatar_url} />
+      <div className="organizations">
+        {organizations?.map((organization) => (
+          <div className="organizationsDiv">
+            <div className="organizationsImg">
+              <img src={organization?.avatar_url} />
+            </div>
+            <h4>{organization?.login}</h4>
           </div>
-          <h4>{organization?.login}</h4>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
